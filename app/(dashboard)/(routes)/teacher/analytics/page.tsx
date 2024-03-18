@@ -1,13 +1,7 @@
+import React from "react";
 
+const AnalyticsPage = () => {
+  return <div>Analytics Page</div>;
+};
 
-
-const AnalyticsPage = async () => {
-  
-
-  return ( 
-    <div>
-    </div>
-   );
-}
- 
 export default AnalyticsPage;
