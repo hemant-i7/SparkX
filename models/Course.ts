@@ -10,12 +10,14 @@ const CourseSchema = new mongoose.Schema({
   },
   description: {
     type: String,
+    default: "",
   },
   imageUrl: {
     type: String,
   },
   price: {
     type: Number,
+    default: 0,
   },
   isPublished: {
     type: Boolean,

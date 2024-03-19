@@ -21,7 +21,7 @@ export async function PATCH(
     }
 
     const course = await Course.findByIdAndUpdate(courseId, {
-      title: values.title,
+      ...values,
     });
 
     return NextResponse.json(course);
