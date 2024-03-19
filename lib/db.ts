@@ -11,10 +11,10 @@ export async function connect() {
     });
 
     connection.on("error", (err) => {
-      console.log(err);
+      console.log("[MONGO ERROR]",err);
       process.exit(1);
     });
   } catch (err) {
-    console.log(err);
+    console.log("[MONGO ERROR]", err);
   }
 }
