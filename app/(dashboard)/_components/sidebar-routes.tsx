@@ -1,9 +1,10 @@
 "use client";
 
-import { BarChart, Compass, Layout, List } from "lucide-react";
+import { BarChart, Compass, Image, Layout, List } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { SidebarItem } from "./sidebar-item";
+import Certificate from "../(routes)/teacher/certificate/page";
 
 const guestRoutes = [
   {
@@ -13,7 +14,7 @@ const guestRoutes = [
   },
   {
     icon: Compass,
-    label: "Browse",
+    label: "Research",
     href: "/search",
   },
 ];
@@ -29,7 +30,13 @@ const teacherRoutes = [
     label: "Analytics",
     href: "/teacher/analytics",
   },
-]
+
+  {
+    icon: Image,
+    label: "Certificate",
+    href: "/teacher/certificate",
+  },
+];
 
 export const SidebarRoutes = () => {
   const pathname = usePathname();
@@ -49,5 +56,5 @@ export const SidebarRoutes = () => {
         />
       ))}
     </div>
-  )
-}
+  );
+};

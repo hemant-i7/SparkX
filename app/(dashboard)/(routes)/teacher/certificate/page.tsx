@@ -5,7 +5,7 @@ const Certificate = () => {
     <div>
       <iframe
         title="Certificate"
-        src="https://sparkxyoutube.netlify.app/"
+        src="https://sparkx-certificate.netlify.app/"
         width="100%"
         height="640px"
         frameBorder="0"
@@ -15,4 +15,4 @@ const Certificate = () => {
   );
 };
 
-export default Certificate;
+export default Certificate;
