@@ -65,14 +65,14 @@ export const DescriptionForm = ({
   return (
     <div className='mt-6 border bg-slate-100 rounded-md p-4'>
       <div className='font-medium flex items-center justify-between'>
-        Course Description
+        Organization Name
         <Button onClick={toggleEdit} variant='ghost'>
           {isEditing ? (
             <>Cancel</>
           ) : (
             <>
               <Pencil className='h-4 w-4 mr-2' />
-              Edit Description
+              Edit
             </>
           )}
         </Button>
@@ -99,7 +99,7 @@ export const DescriptionForm = ({
                   <FormControl>
                     <Textarea
                       disabled={isSubmitting}
-                      placeholder="e.g. 'This course is about'"
+                      placeholder="e.g. 'DJ Sanghvi College of Engineering'"
                       {...field}
                     />
                   </FormControl>

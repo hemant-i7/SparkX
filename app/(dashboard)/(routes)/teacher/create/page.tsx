@@ -52,10 +52,8 @@ const CreatePage = () => {
   return (
     <div className='max-w-5xl mx-auto flex md:items-center md:justify-center h-full p-6'>
       <div>
-        <h1 className='text-2xl font-medium'>Name your course</h1>
+        <h1 className='text-2xl font-medium'>Enter your Sport Name </h1>
         <p className='text-sm text-slate-600'>
-          What whould you like to name your course? Don't worry, you can change
-          this later.
         </p>
 
         <Form {...form}>
@@ -67,12 +65,11 @@ const CreatePage = () => {
               name='title'
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Course title</FormLabel>
+                  <FormLabel>name</FormLabel>
                   <FormControl>
-                    <Input placeholder='e.g. Advance JEE' {...field} />
+                    <Input placeholder='e.g. Cricket' {...field} />
                   </FormControl>
                   <FormDescription>
-                    What will you teach in this course?
                   </FormDescription>
                   <FormMessage />
                 </FormItem>

@@ -29,7 +29,7 @@ export const NavbarRoutes = () => {
         ) : (
           <Link href='/teacher/courses'>
             <Button size='sm' variant='ghost'>
-              Volunteer Mode
+              Change Mode
             </Button>
           </Link>
         )}
