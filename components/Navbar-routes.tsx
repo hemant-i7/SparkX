@@ -29,10 +29,15 @@ export const NavbarRoutes = () => {
         ) : (
           <Link href='/teacher/courses'>
             <Button size='sm' variant='ghost'>
-            volunteer mode
+              Volunteer Mode
             </Button>
           </Link>
         )}
+        <Link href='/offline'>
+          <Button size='sm' variant='ghost'>
+            Offline Mode
+          </Button>
+        </Link>
         <UserButton afterSignOutUrl='/' />
       </div>
     </>
