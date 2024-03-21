@@ -9,6 +9,7 @@ import { TitleForm } from "./_components/title-form";
 import { Description } from "@radix-ui/react-dialog";
 import { DescriptionForm } from "./_components/description-form";
 import { ImageForm } from "./_components/image-form";
+import { Button } from "@/components/ui/button";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   connect();
@@ -43,10 +44,10 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
     <div className="p-6">
       <div className="flex items-center justify-between">
         <div className="flex flex-col gap-y-2">
-          <h1 className="text-2xl font-medium">Registration Process</h1>
-          <span className="text-sm text-slate-700">
+          <h1 className="text-2xl font-medium">Registration</h1>
+          {/* <span className="text-sm text-slate-700">
             Complete all fields {completionText}
-          </span>
+          </span> */}
         </div>
       </div>
 
@@ -62,6 +63,8 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
           <DescriptionForm initialData={course} courseId={course.id} />
 
           <ImageForm initialData={course} courseId={course.id} />
+
+          <Button className="p-4 m-4">Submit</Button>
         </div>
       </div>
     </div>

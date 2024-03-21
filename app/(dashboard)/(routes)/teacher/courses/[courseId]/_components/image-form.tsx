@@ -6,7 +6,7 @@ import { Pencil, PlusCircle, ImageIcon } from "lucide-react";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import  Course  from "@/models/Course"
+import Course from "@/models/Course";
 import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
@@ -36,10 +36,7 @@ const formSchema = z.object({
   }),
 });
 
-export const ImageForm = ({
-  initialData,
-  courseId
-}: ImageFormProps) => {
+export const ImageForm = ({ initialData, courseId }: ImageFormProps) => {
   const [isEditing, setIsEditing] = useState(false);
 
   const toggleEdit = () => setIsEditing((current) => !current);
@@ -49,22 +46,20 @@ export const ImageForm = ({
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
       await axios.patch(`/api/courses/${courseId}`, values);
-      toast.success("Course updated");
+      toast.success("Updated");
       toggleEdit();
       router.refresh();
     } catch {
       toast.error("Something went wrong");
     }
-  }
+  };
 
   return (
     <div className="mt-6 border bg-slate-100 rounded-md p-4">
       <div className="font-medium flex items-center justify-between">
         Student Image
         <Button onClick={toggleEdit} variant="ghost">
-          {isEditing && (
-            <>Cancel</>
-          )}
+          {isEditing && <>Cancel</>}
           {!isEditing && !initialData.imageUrl && (
             <>
               <PlusCircle className="h-4 w-4 mr-2" />
@@ -79,8 +74,8 @@ export const ImageForm = ({
           )}
         </Button>
       </div>
-      {!isEditing && (
-        !initialData.imageUrl ? (
+      {!isEditing &&
+        (!initialData.imageUrl ? (
           <div className="flex items-center justify-center h-60 bg-slate-200 rounded-md">
             <ImageIcon className="h-10 w-10 text-slate-500" />
           </div>
@@ -93,8 +88,7 @@ export const ImageForm = ({
               src={initialData.imageUrl}
             />
           </div>
-        )
-      )}
+        ))}
       {isEditing && (
         <div>
           <FileUpload
@@ -111,5 +105,5 @@ export const ImageForm = ({
         </div>
       )}
     </div>
-  )
-}
+  );
+};
